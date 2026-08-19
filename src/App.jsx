@@ -7,6 +7,7 @@ import Notifications from "./pages/Notifications";
 import Security from "./pages/Security";
 import Health from "./pages/Health";
 import Playground from "../playground/Playground";
+import AIChat from "./components/AIChat";
 
 function Layout() {
   return (
@@ -23,6 +24,7 @@ function Layout() {
           <Link to="/security">Security</Link>
           <Link to="/health">Health</Link>
           <Link to="/playground">Playground</Link>
+          <Link to="/chat">AI Chat</Link>
         </div>
       </nav>
 
@@ -36,6 +38,7 @@ function Layout() {
           <Route path="/security" element={<Security />} />
           <Route path="/health" element={<Health />} />
           <Route path="/playground" element={<Playground />} />
+          <Route path="/chat" element={<AIChat />} />
         </Routes>
       </main>
     </div>
