@@ -6,6 +6,7 @@ import Preferences from "./pages/Preferences";
 import Notifications from "./pages/Notifications";
 import Security from "./pages/Security";
 import Health from "./pages/Health";
+import Playground from "../playground/Playground";
 
 function Layout() {
   return (
@@ -21,6 +22,7 @@ function Layout() {
           <Link to="/notifications">Notifications</Link>
           <Link to="/security">Security</Link>
           <Link to="/health">Health</Link>
+          <Link to="/playground">Playground</Link>
         </div>
       </nav>
 
@@ -33,6 +35,7 @@ function Layout() {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/security" element={<Security />} />
           <Route path="/health" element={<Health />} />
+          <Route path="/playground" element={<Playground />} />
         </Routes>
       </main>
     </div>
