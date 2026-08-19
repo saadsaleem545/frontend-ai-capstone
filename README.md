@@ -1,32 +1,16 @@
-# Frontend AI Engineering Capstone
+# React + Vite
 
-A frontend project developed as part of the Frontend AI Engineering track.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Goals
+Currently, two official plugins are available:
 
-- Build modern frontend applications
-- Practice AI-assisted development
-- Follow clean Git workflows
-- Use Conventional Commits
-- Develop maintainable frontend code
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tech Stack
+## React Compiler
 
-- HTML
-- CSS
-- JavaScript
-- Node.js
-- Git
-- Cursor AI
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Project Status
+## Expanding the ESLint configuration
 
-Setup phase in progress. There is no runnable frontend yet (no `index.html`, CSS, or JavaScript app files).
-
-## Getting started
-
-1. Clone this repository and open the folder in Cursor (or another editor).
-2. Read `CLAUDE.md` for stack, Git, and AI-assisted development conventions.
-3. Add application files as you build (for example `index.html`, CSS, and JavaScript). Use Node.js only when you introduce tooling that needs it.
-
-When a local app exists, update this section with the exact command to open or serve it.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
