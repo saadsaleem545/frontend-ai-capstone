@@ -837,8 +837,52 @@ START SERVER
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(
-    `🚀 SaadAI backend running on http://localhost:${PORT}`
-  );
+/*
+========================================
+404 HANDLER
+========================================
+*/
+
+app.use((req, res) => {
+  res.status(404).json({
+    error: "Route not found",
+  });
 });
+
+/*
+========================================
+GLOBAL ERROR HANDLER
+========================================
+*/
+
+app.use((err, req, res, next) => {
+  console.error("Server Error:", err);
+
+  res.status(500).json({
+    error: "Internal server error",
+  });
+});
+
+/*
+========================================
+EXPORT APP
+========================================
+*/
+
+module.exports = app;
+
+/*
+========================================
+LOCAL DEVELOPMENT
+========================================
+*/
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+
+  app.listen(PORT, () => {
+    console.log(
+      `🚀 SaadAI backend running on http://localhost:${PORT}`
+    );
+  });
+}
