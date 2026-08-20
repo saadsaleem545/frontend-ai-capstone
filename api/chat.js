@@ -1,4 +1,21 @@
-import { groq, MODEL, SYSTEM_PROMPT } from "../server/config/ai.js";
+import Groq from "groq-sdk";
+
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+});
+
+const MODEL = "openai/gpt-oss-20b";
+
+const SYSTEM_PROMPT = `
+You are the AI assistant for a frontend engineering portfolio.
+
+Help visitors understand the projects, technical decisions,
+and capabilities demonstrated in this portfolio.
+
+Be concise, friendly, and useful.
+If you do not know something about the portfolio, say so instead
+of inventing information.
+`;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -37,7 +54,6 @@ export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-cache, no-transform");
   res.setHeader("Connection", "keep-alive");
   res.setHeader("X-Accel-Buffering", "no");
-  res.flushHeaders();
 
   try {
     const stream = await groq.chat.completions.create({
@@ -55,13 +71,9 @@ export default async function handler(req, res) {
     });
 
     for await (const chunk of stream) {
-      if (res.writableEnded) {
-        break;
-      }
-
       const text = chunk.choices?.[0]?.delta?.content;
 
-      if (text) {
+      if (text && !res.writableEnded) {
         res.write(text);
       }
     }
