@@ -325,9 +325,7 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "https://saadai-backend.vercel.app/api/chat",
-        {
+      const response = await fetch("https://saadai-backend.vercel.app/api/chat", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -412,13 +410,15 @@ function App() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-black text-white">
 
-      {/* =====================================================
-          NAVBAR
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* NAVBAR */}
+      {/* ===================================================== */}
 
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
 
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+
+          {/* Logo */}
 
           <a
             href="#top"
@@ -430,6 +430,8 @@ function App() {
               AI
             </span>
           </a>
+
+          {/* Desktop Navigation */}
 
           <div className="hidden items-center gap-7 text-sm text-gray-300 md:flex">
 
@@ -453,6 +455,8 @@ function App() {
 
           </div>
 
+          {/* Mobile Menu Button */}
+
           <button
             type="button"
             onClick={() =>
@@ -465,6 +469,8 @@ function App() {
           </button>
 
         </div>
+
+        {/* Mobile Navigation */}
 
         {mobileMenuOpen && (
           <div className="border-t border-white/10 bg-black/95 px-6 py-5 backdrop-blur-xl md:hidden">
@@ -498,14 +504,16 @@ function App() {
 
       </nav>
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* HERO */}
+      {/* ===================================================== */}
 
       <section
         id="top"
         className="ai-grid relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24"
       >
+
+        {/* Background Glow */}
 
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[120px]" />
 
@@ -514,6 +522,8 @@ function App() {
         <div className="pointer-events-none absolute bottom-20 right-10 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
 
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col-reverse items-center gap-16 md:flex-row md:justify-between">
+
+          {/* Hero Text */}
 
           <div className="animate-fade-up max-w-3xl text-center md:text-left">
 
@@ -553,6 +563,8 @@ function App() {
               solutions, and scalable systems.
             </p>
 
+            {/* Tech Tags */}
+
             <div className="mt-7 flex flex-wrap justify-center gap-2 md:justify-start">
 
               {[
@@ -573,11 +585,13 @@ function App() {
 
             </div>
 
+            {/* Buttons */}
+
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
 
               <a
                 href="#projects"
-                className="rounded-full bg-cyan-400 px-7 py-3 font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-cyan-300"
+                className="rounded-full bg-cyan-400 px-7 py-3 font-semibold text-black shadow-[0_0_30px_rgba(34,211,238,0.15)] transition duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.3)]"
               >
                 View My Work →
               </a>
@@ -599,12 +613,15 @@ function App() {
 
             </div>
 
+            {/* Stats */}
+
             <div className="mt-12 flex flex-wrap justify-center gap-8 md:justify-start">
 
               <div>
                 <p className="text-2xl font-bold text-white">
                   {projects.length}+
                 </p>
+
                 <p className="mt-1 text-sm text-gray-500">
                   Projects
                 </p>
@@ -616,6 +633,7 @@ function App() {
                 <p className="text-2xl font-bold text-white">
                   20+
                 </p>
+
                 <p className="mt-1 text-sm text-gray-500">
                   Technologies
                 </p>
@@ -627,6 +645,7 @@ function App() {
                 <p className="text-2xl font-bold text-white">
                   AI
                 </p>
+
                 <p className="mt-1 text-sm text-gray-500">
                   Focus
                 </p>
@@ -635,6 +654,8 @@ function App() {
             </div>
 
           </div>
+
+          {/* Profile / AI Visual */}
 
           <div className="animate-floating relative flex flex-shrink-0 items-center justify-center">
 
@@ -651,14 +672,16 @@ function App() {
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-2 border-cyan-400/60 bg-black shadow-[0_0_60px_rgba(34,211,238,0.25)] transition duration-500 hover:scale-105 hover:border-cyan-300 md:h-80 md:w-80">
 
               <img
-                src="/profile.jpeg"
-                alt="Saad Saleem"
-                className="h-full w-full object-cover"
+              src="/profile.png"
+              alt="Saad Saleem"
+              className="h-full w-full object-cover"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-cyan-400/5" />
 
             </div>
+
+            {/* SaadAI Card */}
 
             <div className="absolute -bottom-5 -left-8 rounded-2xl border border-white/10 bg-black/80 px-5 py-3 shadow-2xl backdrop-blur-xl">
 
@@ -684,6 +707,8 @@ function App() {
 
             </div>
 
+            {/* Learning Card */}
+
             <div className="absolute -right-6 bottom-12 rounded-2xl border border-white/10 bg-black/80 px-4 py-3 shadow-2xl backdrop-blur-xl">
 
               <p className="text-xs text-gray-500">
@@ -702,9 +727,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          ABOUT
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* ABOUT */}
+      {/* ===================================================== */}
 
       <section
         id="about"
@@ -747,9 +772,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          SKILLS
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* SKILLS */}
+      {/* ===================================================== */}
 
       <section
         id="skills"
@@ -808,9 +833,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          PROJECTS
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* PROJECTS */}
+      {/* ===================================================== */}
 
       <section
         id="projects"
@@ -833,6 +858,8 @@ function App() {
             automation, and software engineering.
           </p>
 
+          {/* Project Stats */}
+
           <div className="mt-8 flex flex-wrap gap-3">
 
             <span className="rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm text-cyan-400">
@@ -853,6 +880,8 @@ function App() {
 
           </div>
 
+          {/* Project Grid */}
+
           <div className="mt-12 grid gap-6 md:grid-cols-2">
 
             {projects.map((project, index) => (
@@ -866,7 +895,11 @@ function App() {
                 }`}
               >
 
+                {/* Glow */}
+
                 <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-cyan-400/5 blur-3xl transition duration-500 group-hover:bg-cyan-400/10" />
+
+                {/* Header */}
 
                 <div className="relative z-10 mb-6 flex items-center justify-between">
 
@@ -880,19 +913,27 @@ function App() {
 
                 </div>
 
+                {/* Featured */}
+
                 {project.featured && (
                   <div className="relative z-10 mb-4 inline-flex items-center gap-2 rounded-full bg-cyan-400 px-3 py-1 text-xs font-bold text-black">
                     ✦ Featured Project
                   </div>
                 )}
 
+                {/* Title */}
+
                 <h3 className="relative z-10 text-2xl font-bold leading-tight">
                   {project.title}
                 </h3>
 
+                {/* Description */}
+
                 <p className="relative z-10 mt-4 leading-7 text-gray-400">
                   {project.description}
                 </p>
+
+                {/* Technologies */}
 
                 <div className="relative z-10 mt-6 flex flex-wrap gap-2">
 
@@ -908,6 +949,8 @@ function App() {
                   ))}
 
                 </div>
+
+                {/* GitHub */}
 
                 <div className="relative z-10 mt-7">
 
@@ -926,6 +969,8 @@ function App() {
 
                 </div>
 
+                {/* Number */}
+
                 <span className="absolute bottom-5 right-7 text-6xl font-black text-white/[0.025] transition duration-500 group-hover:text-cyan-400/[0.05]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -935,6 +980,8 @@ function App() {
             ))}
 
           </div>
+
+          {/* GitHub CTA */}
 
           <div className="mt-12 text-center">
 
@@ -953,9 +1000,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          EXPERIENCE
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* EXPERIENCE */}
+      {/* ===================================================== */}
 
       <section
         id="experience"
@@ -973,6 +1020,8 @@ function App() {
           </h2>
 
           <div className="mt-12 space-y-8">
+
+            {/* Internship */}
 
             <div className="hover-glow relative rounded-3xl border border-white/10 bg-white/[0.03] p-7">
 
@@ -1029,6 +1078,8 @@ function App() {
               </div>
 
             </div>
+
+            {/* Education */}
 
             <div className="hover-glow relative rounded-3xl border border-white/10 bg-white/[0.03] p-7">
 
@@ -1093,9 +1144,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          CONTACT
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* CONTACT */}
+      {/* ===================================================== */}
 
       <section
         id="contact"
@@ -1158,9 +1209,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          AI ASSISTANT
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* AI ASSISTANT */}
+      {/* ===================================================== */}
 
       <section
         id="ai-assistant"
@@ -1168,6 +1219,8 @@ function App() {
       >
 
         <div className="mx-auto max-w-4xl">
+
+          {/* AI Header */}
 
           <div className="text-center">
 
@@ -1183,6 +1236,8 @@ function App() {
               Curious about my skills, projects, experience, or career?
               Ask my personal AI assistant.
             </p>
+
+            {/* Suggested Questions */}
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
 
@@ -1205,7 +1260,11 @@ function App() {
 
           </div>
 
+          {/* Chat Container */}
+
           <div className="ai-glow mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+
+            {/* Chat Header */}
 
             <div className="flex items-center gap-4 border-b border-white/10 px-6 py-5">
 
@@ -1226,6 +1285,8 @@ function App() {
               </div>
 
             </div>
+
+            {/* Chat Area */}
 
             <div className="max-h-[500px] min-h-[300px] space-y-4 overflow-y-auto p-6">
 
@@ -1254,6 +1315,8 @@ function App() {
 
               ))}
 
+              {/* Loading */}
+
               {loading && (
 
                 <div className="flex justify-start">
@@ -1280,9 +1343,13 @@ function App() {
 
               )}
 
+              {/* Auto Scroll Target */}
+
               <div ref={chatEndRef} />
 
             </div>
+
+            {/* Input */}
 
             <div className="border-t border-white/10 p-4">
 
@@ -1326,9 +1393,9 @@ function App() {
 
       </section>
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* FOOTER */}
+      {/* ===================================================== */}
 
       <footer className="border-t border-white/10 px-6 py-8">
 
@@ -1347,9 +1414,9 @@ function App() {
 
       </footer>
 
-      {/* =====================================================
-          BACK TO TOP
-      ===================================================== */}
+      {/* ===================================================== */}
+      {/* BACK TO TOP */}
+      {/* ===================================================== */}
 
       {showTopButton && (
 
