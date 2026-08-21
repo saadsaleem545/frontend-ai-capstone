@@ -1,19 +1,21 @@
-export default function App() {
+function App() {
   return (
     <main
       style={{
         minHeight: "100vh",
-        display: "grid",
-        placeItems: "center",
-        padding: "24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         fontFamily: "Arial, sans-serif",
-        textAlign: "center",
+        padding: "24px",
       }}
     >
-      <section>
+      <div style={{ textAlign: "center" }}>
         <h1>Muhammad Saad</h1>
         <p>Frontend AI Engineering Portfolio</p>
-      </section>
+      </div>
     </main>
   );
 }
+
+export default App;
