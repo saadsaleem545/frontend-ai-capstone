@@ -672,7 +672,7 @@ function App() {
             <div className="relative h-64 w-64 overflow-hidden rounded-full border-2 border-cyan-400/60 bg-black shadow-[0_0_60px_rgba(34,211,238,0.25)] transition duration-500 hover:scale-105 hover:border-cyan-300 md:h-80 md:w-80">
 
               <img
-                src="/profile.jpeg"
+                src="/profile.png"
                 alt="Saad Saleem"
                 className="h-full w-full object-cover"
               />
